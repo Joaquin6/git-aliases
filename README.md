@@ -2,14 +2,15 @@
 
 > Shorten various frequently used git aliases:
 
-* `s` does `git status`
-* `reset` does `git reset --hard`
-* `reset <commit>` does `git reset --hard <commit>`
-* `co <branch>` does `git checkout <branch>`.  You can tab autocomplete these branches.
-* `cob <branch>` does `git checkout -b <branch>` (make a branch)
+* `gsb` does `git status`
+* `gru` does `git reset --`
+* `grhh` does `git reset HEAD --hard`
+* `grhh <commit>` does `git reset HEAD --hard <commit>`
+* `gco <branch>` does `git checkout <branch>`.  You can tab autocomplete these branches.
+* `gcb <branch>` does `git checkout -b <branch>` (make a branch)
 * `gf` does `git fetch`
 * `gb` does `git branch` (see your branches)
-* `clone <git username> <repo name>` shortens `git clone` by not requiring the URL (though you can `clone <URL>` if you want to).  Also, will `cd` into the directory automatically. (Use clone -d to not cd automatically.)
+* `gcl <git username> <repo name>` shortens `git clone` by not requiring the URL (though you can `clone <URL>` if you want to).  Also, will `cd` into the directory automatically. (Use clone -d to not cd automatically.)
 
 Create new omnibus commands by merging things together:
 
@@ -31,7 +32,7 @@ Create new omnibus commands by merging things together:
 * `deploy` will run `bin/deploy` if the file exists, or `git push heroku master` otherwise.
 * `release <tag>` will automatically release (`git tag` + `git push`) with that tag.
 
-No changes are made to anything involving `git commit`, `git push`, or `git pull`, because these functionalities are turbocharged by [Send.zsh](https://github.com/robertzk/send.zsh) and [Send.vim](https://github.com/Joaquin6/send.vim).
+No changes are made to anything involving `git commit`, `git push`, or `git pull`, because these functionalities are turbocharged by [Send.zsh](https://github.com/robertzk/send.zsh) and [Send.vim](https://github.com/peterhurford/send.vim).
 
 
 ## Installation
@@ -42,23 +43,23 @@ Assuming you have [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), you ca
 simply write:
 
 ```bash
-git clone git@github.com:Joaquin6/git-aliases.zsh.git ~/.oh-my-zsh/custom/plugins/git-aliases
+git clone git@github.com:Joaquin6/git-aliases.git ~/.oh-my-zsh/custom/plugins/git-aliases
 echo "plugins+=(git-aliases)" >> ~/.zshrc
 ```
 
 (Alternatively, you can place the `git-aliases` plugin in the `plugins=(...)` local in your `~/.zshrc` manually.)
 
-(Once you have this plugin, you can clone this plugin via `clone Joaquin6 git-aliases.zsh` instead.  Much better!)
+(Once you have this plugin, you can clone this plugin via `clone Joaquin6 git-aliases` instead.  Much better!)
 
 ### Antigen
-If you're using the [Antigen](https://github.com/zsh-users/antigen) framework for ZSH, all you have to do is add `antigen bundle Joaquin6/git-aliases.zsh` to your `.zshrc` wherever you're adding your other antigen bundles. Antigen will automatically clone the repo and add it to your antigen configuration the next time you open a new shell.
+If you're using the [Antigen](https://github.com/zsh-users/antigen) framework for ZSH, all you have to do is add `antigen bundle Joaquin6/git-aliases` to your `.zshrc` wherever you're adding your other antigen bundles. Antigen will automatically clone the repo and add it to your antigen configuration the next time you open a new shell.
 
 ### Bash
 If you use the non-recommended alternative, bash, you can install this directly to you
 r `~/.bash_profile`:
 
 ```bash
-curl -s https://raw.githubusercontent.com/Joaquin6/git-aliases.zsh/master/git-aliases.plugin.zsh >>
+curl -s https://raw.githubusercontent.com/Joaquin6/git-aliases/master/git-aliases.plugin.zsh >>
 ~/.bash_profile
 ```
 

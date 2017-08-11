@@ -1,3 +1,5 @@
+source $PWD/git-aliases.sh
+
 pull_or_push() {
   if [ $# -eq 2 ]; then
     git $1 $2 `git rev-parse --abbrev-ref HEAD`
@@ -7,12 +9,6 @@ pull_or_push() {
 }
 pull() { pull_or_push "pull" $@ }
 push() { pull_or_push "push" $@ }
-
-alias gf='git fetch'
-alias gb='git branch'
-alias reset='git reset --hard'
-alias unmerged="git branch --no-merged"
-alias plog="git log --oneline --decorate"
 
 flog() {
   git log -p $1
