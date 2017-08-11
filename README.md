@@ -81,12 +81,6 @@ curl -s https://raw.githubusercontent.com/Joaquin6/git-aliases/master/git-aliase
 I obviously prefer my plugin better -- it has alias names that make more sense to me, and it has more complex aliases that make working on things much easier (especially Ruby projects with built in `bundle` and `migrate`), and stuff like autopush on new branch is really neeat.  But if you don't work with Ruby and don't like some of the style choices I made (though feel free to suggest options for futher customizations, see above), you might prefer that plugin instead.
 
 
-## Why can't I use them both?
-Pick a side, we're at war!
-
-But in seriousness, I think if you use them both (include both in your plugin line), nothing crashes and they don't interfere much with each other.  You'll be able to use the custom commands both here and there (i.e., both `gco` and `co` will work to do `git checkout`) and nothing in either plugin overwrites functionality of the other plugin.
-
-
 ## Help! Tab completion isn't working for branch names like you said!
 First, I think this only works in Zshell, so if you're not using Zshell, then that's your first problem.
 

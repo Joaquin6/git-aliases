@@ -14,12 +14,6 @@ flog() {
   git log -p $1
 }
 
-status() {
-  if [ "$GIT_ALIASES_SHORTER_GIT_STATUS" -ne 1 ]; then; git status
-  else; git status -sb; fi
-}
-alias s='status'
-
 co() {
   git fetch
   git checkout "$1"
