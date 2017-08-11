@@ -61,6 +61,7 @@ alias gga='git gui citool --amend'
 alias gk='\gitk --all --branches'
 alias gke='\gitk --all $(git log -g --pretty=%h)'
 
+
 alias glg='git log --stat'
 alias glgg='git log --graph'
 alias glgp='git log --stat -p'
@@ -73,7 +74,6 @@ alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
 alias glol='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
 alias glp=_git_log_prettily
-
 
 alias gm='git merge'
 alias gmom='git merge origin/master'
