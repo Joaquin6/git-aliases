@@ -1,5 +1,15 @@
 #!/bin/bash
 
+_pull_or_push() {
+  if [ $# -eq 2 ]; then
+    git $1 $2 `git rev-parse --abbrev-ref HEAD`
+  else
+    git $1 origin `git rev-parse --abbrev-ref HEAD`
+  fi
+}
+_pull() { _pull_or_push "pull" $@ }
+_push() { _pull_or_push "push" $@ }
+
 alias g=git
 alias ga='git add'
 alias gaa='git add --all'
@@ -73,7 +83,6 @@ alias gloga='git log --oneline --decorate --graph --all'
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
 alias glol='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit --all'
-alias glp=_git_log_prettily
 
 alias gm='git merge'
 alias gmom='git merge origin/master'
@@ -82,11 +91,7 @@ alias gmum='git merge upstream/master'
 alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 
-alias gl='git pull'
-alias gup='git pull --rebase'
-alias gupv='git pull --rebase -v'
-alias glum='git pull upstream master'
-alias ggpull='git pull origin $(git_current_branch)'
+alias gpull='_pull'
 
 # git push aliases
 alias gp='git push'
@@ -133,10 +138,6 @@ alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gpristine='git reset --hard && git clean -dfx'
 
-alias gsr='git svn rebase'
-alias gsd='git svn dcommit'
-alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
-
 alias gsi='git submodule init'
 alias gsu='git submodule update'
 
@@ -155,6 +156,4 @@ alias gcount='git shortlog -sn'
 alias gsps='git show --pretty=short --show-signature'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
-alias globurl='noglob urlglobber '
-alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
 alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
