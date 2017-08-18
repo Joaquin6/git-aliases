@@ -92,23 +92,7 @@ alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 
 alias ggpull=_pull
-
-# git push aliases
-alias gp='git push'
-alias gpv='git push -v'
-alias gpu='git push upstream'
-alias gpd='git push --dry-run'
-alias ggpush='git push origin $(git_current_branch)'
-alias gpoat='git push origin --all && git push origin --tags'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
-
-# git rebase aliases
-alias grb='git rebase'
-alias grbi='git rebase -i'
-alias grbm='git rebase master'
-alias grbs='git rebase --skip'
-alias grba='git rebase --abort'
-alias grbc='git rebase --continue'
+alias ggpush=_push
 
 # git stash aliases
 alias gstp='git stash pop'
