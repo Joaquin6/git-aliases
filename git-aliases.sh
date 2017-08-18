@@ -91,7 +91,7 @@ alias gmum='git merge upstream/master'
 alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 
-alias gpull='_pull'
+alias ggpull=_pull
 
 # git push aliases
 alias gp='git push'
