@@ -1,4 +1,4 @@
-ALOCSH=$ADOTDIR/repos/https-COLON--SLASH--SLASH-github.com-SLASH-joaquin6-SLASH-git-aliases.git
+ALOCSH=$ADOTDIR/bundles/Joaquin6/git-aliases
 
 source $ALOCSH/git-aliases.sh
 
